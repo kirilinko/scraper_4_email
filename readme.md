@@ -99,23 +99,6 @@ python my_scraper_script.py
 
 ---
 
-## ⚙️ Dependencies
-
-Installed automatically via `pip`, includes:
-
-- `requests`
-- `beautifulsoup4`
-- `pandas`
-- `openpyxl`
-
-To install manually:
-
-```bash
-pip install requests beautifulsoup4 pandas openpyxl
-```
-
----
-
 ## ✅ Compatibility
 
 - Python 3.7+
