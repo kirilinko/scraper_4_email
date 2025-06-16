@@ -97,13 +97,8 @@ python my_scraper_script.py
   - `support {at} domain.com`
 - Outputs a CSV with all detected addresses per site
 
----
-
-
 ## 👤 Author
 
 Developed by **Franck D**  
 📧 Email: contact@algo-mania.com  
 🔗 GitHub: [github.com/kirilinko](https://github.com/kirilinko)
-
----
