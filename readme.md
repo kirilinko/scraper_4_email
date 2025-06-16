@@ -99,22 +99,10 @@ python my_scraper_script.py
 
 ---
 
-## ✅ Compatibility
-
-- Python 3.7+
-- Compatible with Windows, macOS, and Linux
-
----
-
-## 📝 License
-
-MIT License — free to use, modify, and distribute.
-
----
 
 ## 👤 Author
 
-Developed by **Franck d**  
+Developed by **Franck D**  
 📧 Email: contact@algo-mania.com  
 🔗 GitHub: [github.com/kirilinko](https://github.com/kirilinko)
 
