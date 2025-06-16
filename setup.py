@@ -16,7 +16,7 @@ setup(
         ],
     },
     author="Franck da COSTA",
-    description="Scraper d'e-mails à partir de fichiers Excel de sites web.",
+    description="Scrape e-mails from Excel files on websites.",
     classifiers=[
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
