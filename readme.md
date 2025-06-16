@@ -49,7 +49,7 @@ The resulting CSV will contain:
 
 | site                | pages_explored | emails                           |
 |---------------------|----------------|-----------------------------------|
-| https://example.com | 7              | info@example.com, contact@...    |
+| example.com         | 7              | info@example.com, contact@...    |
 
 ---
 
