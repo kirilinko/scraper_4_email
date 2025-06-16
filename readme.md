@@ -1,25 +1,138 @@
 # 📧 scraper-4-email
 
-**scraper-4-email** est un outil Python permettant d’extraire automatiquement des adresses e-mails (même obfusquées) à partir des sites web listés dans un fichier Excel. Il parcourt les sitemaps, récupère les pages pertinentes et analyse leur contenu textuel pour détecter les adresses e-mail.
-
----
-
-## 🚀 Fonctionnalités
-
-- 🔍 Récupération automatique des URLs via les fichiers sitemap XML (`/page-sitemap.xml`)
-- 🧠 Détection d'e-mails normaux et obfusqués (`[at]`, `(dot)`, `{at}`, etc.)
-- 📄 Lecture des sites à scanner depuis un fichier Excel `.xlsx`
-- 🧪 Normalisation automatique des e-mails détectés
-- 📝 Export final dans un fichier CSV clair et structuré
-- 🖥️ Utilisation en **ligne de commande** ou en **script Python**
+**scraper-4-email** is a Python tool that extracts email addresses — including obfuscated formats (e.g., `[at]`, `(dot)`, `{at}`, etc.) — from websites listed in an Excel file. It retrieves pages from each site's sitemap, scrapes the content, and outputs all found emails into a clean CSV file.
 
 ---
 
 ## 📦 Installation
 
-### ▶️ Depuis le code source
+### From PyPI (recommended)
+
+> Requires Python 3.7 or higher.
 
 ```bash
-git clone https://github.com/ton-utilisateur/scraper-4-email.git
-cd scraper-4-email
-pip install .
+pip install scraper-4-email
+```
+
+### From GitHub (latest development version)
+
+```bash
+pip install git+https://github.com/kirilinko/scraper-4-email.git
+```
+
+## 🖥️ Command Line Usage
+
+Once installed, the tool can be used directly from your terminal:
+
+```bash
+scraper-4-email path/to/sites.xlsx output.csv
+```
+
+### ✅ Example
+
+```bash
+scraper-4-email site_list.xlsx scraped_emails.csv
+```
+
+### 📥 Excel Input Format
+
+The Excel file must contain a column named `site`, with each row containing a domain name (no protocol required):
+
+| site            |
+|-----------------|
+| example.com     |
+| mycompany.org   |
+
+### 📤 CSV Output Format
+
+The resulting CSV will contain:
+
+| site                | pages_explored | emails                           |
+|---------------------|----------------|-----------------------------------|
+| https://example.com | 7              | info@example.com, contact@...    |
+
+---
+
+## 🐍 Usage in Python
+
+You can also use `scraper-4-email` as a Python module in your own scripts:
+
+```python
+from scraper_4_email import run_scraper
+
+run_scraper("site_list.xlsx", "output_emails.csv")
+```
+
+### Example Script
+
+```python
+# my_scraper_script.py
+
+from scraper_4_email import run_scraper
+
+input_file = "sites.xlsx"
+output_file = "emails_found.csv"
+
+run_scraper(input_file, output_file)
+```
+
+Run the script:
+
+```bash
+python my_scraper_script.py
+```
+
+---
+
+## What It Does
+
+- Loads domain names from an Excel `.xlsx` file
+- Automatically retrieves each site's sitemap (`/page-sitemap.xml`)
+- Filters out blog/news URLs to reduce noise
+- Scrapes the visible text of each page
+- Extracts emails using smart regex matching
+- Normalizes obfuscated email formats like:
+  - `john [at] example [dot] com`
+  - `jane(at)company(dot)org`
+  - `support {at} domain.com`
+- Outputs a CSV with all detected addresses per site
+
+---
+
+## ⚙️ Dependencies
+
+Installed automatically via `pip`, includes:
+
+- `requests`
+- `beautifulsoup4`
+- `pandas`
+- `openpyxl`
+
+To install manually:
+
+```bash
+pip install requests beautifulsoup4 pandas openpyxl
+```
+
+---
+
+## ✅ Compatibility
+
+- Python 3.7+
+- Compatible with Windows, macOS, and Linux
+
+---
+
+## 📝 License
+
+MIT License — free to use, modify, and distribute.
+
+---
+
+## 👤 Author
+
+Developed by **Franck d**  
+📧 Email: contact@algo-mania.com  
+🔗 GitHub: [github.com/kirilinko](https://github.com/kirilinko)
+
+---
