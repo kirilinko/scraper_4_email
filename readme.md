@@ -1,6 +1,6 @@
 # 📧 scraper-4-email
 
-**scraper-4-email** is a Python tool that extracts email addresses — including obfuscated formats (e.g., `[at]`, `(dot)`, `{at}`, etc.) — from websites listed in an Excel file. It retrieves pages from each site's sitemap, scrapes the content, and outputs all found emails into a clean CSV file.
+**scraper-4-email** is a Python tool that extracts email addresses, including obfuscated formats (e.g., `[at]`, `(dot)`, `{at}`, etc.), from websites listed in an Excel file. It retrieves pages from each site's sitemap, scrapes the content, and outputs all found emails into a clean CSV file.
 
 ---
 
